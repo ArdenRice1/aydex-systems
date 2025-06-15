@@ -33,7 +33,7 @@
       padding-bottom: 0.5rem;
       margin-top: 2rem;
     }
-    .project, .service {
+    .section-block {
       background: white;
       border-radius: 10px;
       padding: 1rem;
@@ -59,59 +59,97 @@
       border-radius: 5px;
       margin-top: 1rem;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="aydex_logo_blue_gradient_clean.png" alt="Aydex Logo">
     <h1>Aydex Systems</h1>
-    <p>Custom Engineering Interfaces, Embedded Systems & Web Control Tools</p>
+    <p>Custom Interfaces, Embedded Systems, and Engineering Dashboards</p>
+    <blockquote style="font-style: italic; margin-top: 1rem;">"Your machine, data, and custom UI — to your specifications. With full certainty of compliance, traceability, accuracy, and compatibility."</blockquote>
   </header>
 
   <div class="container">
     <section>
-      <h2>🔧 Services</h2>
-      <div class="service">
-        <strong>Data Loggers & Forensic Testing</strong><br />
-        Custom Pi/STM32 logging solutions for field/lab use (CSV/PDF/cloud-ready)
-      </div>
-      <div class="service">
-        <strong>Embedded Interfaces</strong><br />
-        STM32/Pi GUI or CLI systems for controlling machines, sensors, and test equipment
-      </div>
-      <div class="service">
-        <strong>Web-Controlled Hardware</strong><br />
-        Mobile-friendly UIs for controlling actuators, motors, sensors via Flask/React
-      </div>
-      <div class="service">
-        <strong>Startup MVPs + Reporting Tools</strong><br />
-        From idea to working prototype in 1 week. Auto-reporting PDFs, ISO/ASTM formats
-      </div>
+      <h2>🔧 Modular Engineering Services</h2>
+      <table>
+        <thead>
+          <tr><th>🔧 Category</th><th>Service</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Data & Testing</td><td><strong>Custom Data Loggers</strong></td><td>Collect, store, and export sensor data from lab or field equipment (CSV, PDF, cloud).</td></tr>
+          <tr><td></td><td><strong>Forensic Test Automation</strong></td><td>Replace manual testing with compliant, automated force/displacement analysis systems.</td></tr>
+          <tr><td>Device Interfaces</td><td><strong>Embedded UI Development</strong></td><td>STM32 or Raspberry Pi UIs for control, feedback, and monitoring.</td></tr>
+          <tr><td></td><td><strong>Touchscreen UX Systems</strong></td><td>Graphical interfaces for test machines, labs, or portable rigs.</td></tr>
+          <tr><td>Remote & Web Control</td><td><strong>Web-Controlled Hardware</strong></td><td>Control actuators, sensors, motors, or lights from browser or mobile.</td></tr>
+          <tr><td></td><td><strong>Mobile-Friendly Engineering Apps</strong></td><td>Use phones or tablets in the field with intuitive engineering interfaces.</td></tr>
+          <tr><td>Compliance & Reporting</td><td><strong>ASTM/ISO Report Generators</strong></td><td>Auto-generate compliant PDFs from test data for clients or inspectors.</td></tr>
+          <tr><td></td><td><strong>Audit-Ready Traceability</strong></td><td>Versioned test logs with operator info, timestamps, and approval tracking.</td></tr>
+          <tr><td>Prototyping</td><td><strong>Product MVPs for Startups</strong></td><td>Turn your prototype idea into a working Pi/STM32/web hybrid demo fast.</td></tr>
+          <tr><td></td><td><strong>Custom Circuit + Software Builds</strong></td><td>Full-cycle development of smart devices with logging, control, and reporting.</td></tr>
+          <tr><td>Infrastructure & Support</td><td><strong>Device + Server Integration</strong></td><td>Sync test results to Google Drive, Dropbox, or your own internal system.</td></tr>
+          <tr><td></td><td><strong>System Recovery & Modernization</strong></td><td>Upgrade broken or aging machines with new control boards and logging systems.</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <section>
-      <h2>🚀 Featured Projects</h2>
-      <div class="project">
-        <strong>QuadPod</strong>: Mobile adhesive tester UI + force logger with Pi + web app
+      <h2>🚀 Project Portfolio</h2>
+      <div class="section-block">
+        <strong>QuadPod</strong>: Mobile web tester for roofing adhesive. Web UI + Pi + actuator + logger.
+        <br><em>📸 Screenshot Placeholder – UI or hardware photo</em>
       </div>
-      <div class="project">
-        <strong>Tensile Tester Redesign</strong>: ASTM-aligned logger with PDF/CSV, touchscreen UX
+      <div class="section-block">
+        <strong>Tensile Tester Redesign</strong>: Touchscreen forensic logger with CSV/PDF output.
+        <br><em>📸 Screenshot Placeholder – Touchscreen, enclosure, or graph output</em>
       </div>
-      <div class="project">
-        <strong>Crowd Density Sensor</strong>: STM32 smart sensing system w/ indicator logic
+      <div class="section-block">
+        <strong>Crowd Density Detection System</strong>: STM32-based sensor + LED indicator logic.
+        <br><em>📸 Screenshot Placeholder – sensor + visual indicator</em>
       </div>
-      <div class="project">
-        <strong>CoreFlux (Concept)</strong>: Developer-first OS for rapid test automation
+      <div class="section-block">
+        <strong>CoreFlux (Concept)</strong>: Dev-optimized OS environment for rapid automation testing.
+        <br><em>📸 Screenshot Placeholder – terminal mockup or system diagram</em>
       </div>
-      <div class="project">
-        <strong>Environmental Logger</strong>: Flask + DHT22 temp/humidity logger
+      <div class="section-block">
+        <strong>Environmental Logger</strong>: Flask + DHT22 logger with mobile UI.
+        <br><em>📸 Screenshot Placeholder – simple Flask UI demo</em>
       </div>
     </section>
 
     <section class="contact">
-      <h2>📬 Contact</h2>
-      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-      <p><a class="btn" href="https://yourdomain.com/aydex_proposal.pdf" target="_blank">📄 View Full Proposal (PDF)</a></p>
+      <h2>📬 Get in Touch</h2>
+      <p>Looking to streamline your lab tools, automate testing, or upgrade your legacy systems?</p>
+      <p>Email: <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p>
+      <p><a class="btn" href="https://linkedin.com/in/YOUR-LINK" target="_blank">🔗 LinkedIn</a></p>
+    </section>
+
+    <section>
+      <h2>🧠 Why Aydex?</h2>
+      <div class="section-block">
+        <p>Aydex Systems builds high-performance custom interfaces for:</p>
+        <ul>
+          <li>Engineering labs</li>
+          <li>Test equipment</li>
+          <li>Field data collection</li>
+          <li>Startup hardware demos</li>
+        </ul>
+        <blockquote>“Built to uncover and solve the problems others overlook.”</blockquote>
+        <p>Whether you're replacing paper, Excel, or clunky legacy UIs — we’ll help you go faster, cleaner, and smarter.</p>
+      </div>
     </section>
   </div>
 </body>
