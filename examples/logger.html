@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aydex Logger Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 2rem;
+      color: #1a1a1a;
+      transition: background 0.3s, color 0.3s;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #003973;
+    }
+    .logger-box {
+      font-family: monospace;
+      background: #eef3f7;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border: 1px solid #cbd5e1;
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      background: #003973;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 1.5rem;
+    }
+    .theme-toggle {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      text-align: right;
+    }
+    .dark {
+      background: #1f1f1f;
+      color: #eee;
+    }
+    .dark .container {
+      background: #2a2a2a;
+      box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+    }
+    .dark .logger-box {
+      background: #333;
+      border-color: #555;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()">Toggle Light/Dark Theme</button>
+  </div>
+
+  <div class="container">
+    <h1>🔧 Aydex Logger UI Demo</h1>
+
+    <div class="logger-box" id="output">
+      Force: 0.00 lbs<br>
+      Temperature: 72.0 °F<br>
+      Humidity: 44%<br>
+      Test #: 0<br>
+      Time: --:--:--
+    </div>
+
+    <button onclick="runLogger()">Start Test</button>
+    <button onclick="resetLogger()">Reset</button>
+    <button onclick="fakeCSV()">Mock Export to CSV</button>
+
+    <p class="note">
+      This demo can be fully customized for your application:
+      <ul>
+        <li>✔️ Color themes to match your brand</li>
+        <li>✔️ Real-time force/displacement sensors (HX711, MCP3008, etc.)</li>
+        <li>✔️ Save logs to local CSV or remote cloud server</li>
+        <li>✔️ Touchscreen mode and multilingual support</li>
+        <li>✔️ Optional login, sync status, or custom workflows</li>
+      </ul>
+    </p>
+  </div>
+
+  <script>
+    let testCount = 0;
+    function runLogger() {
+      testCount++;
+      const force = (Math.random() * 80 + 10).toFixed(2);
+      const temp = (70 + Math.random() * 5).toFixed(1);
+      const humidity = (40 + Math.random() * 10).toFixed(0);
+      const time = new Date().toLocaleTimeString();
+
+      document.getElementById("output").innerHTML =
+        `Force: ${force} lbs<br>` +
+        `Temperature: ${temp} °F<br>` +
+        `Humidity: ${humidity}%<br>` +
+        `Test #: ${testCount}<br>` +
+        `Time: ${time}`;
+    }
+
+    function resetLogger() {
+      testCount = 0;
+      document.getElementById("output").innerHTML =
+        `Force: 0.00 lbs<br>` +
+        `Temperature: 72.0 °F<br>` +
+        `Humidity: 44%<br>` +
+        `Test #: 0<br>` +
+        `Time: --:--:--`;
+    }
+
+    function fakeCSV() {
+      alert("CSV exported to: /logs/test_" + testCount + ".csv (mock only)");
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
