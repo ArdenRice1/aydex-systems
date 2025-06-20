@@ -6,84 +6,108 @@
   <title>Aydex Systems – Custom Engineering Interfaces</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(to right, #003973, #E5E5BE);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header img {
-      height: 80px;
-      margin-bottom: 1rem;
-    }
-    nav {
-      background-color: #003973;
-      padding: 0.5rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-    }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
-    }
-    .section-block {
-      background: white;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .contact {
-      margin-top: 2rem;
-      background: #003973;
-      color: white;
-      padding: 2rem;
-      border-radius: 10px;
-    }
-    a {
-      color: #003973;
-      text-decoration: none;
-    }
-    .btn {
-      display: inline-block;
-      background: #003973;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      margin-top: 1rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 2rem;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 0.75rem;
-      vertical-align: top;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+  :root {
+    --primary: #003973;
+    --background: #1e1e1e;
+    --foreground: #f0f0f0;
+    --card: #2a2a2a;
+    --accent: #4e7cff;
+    --highlight: #bdcfff;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #003973, #e5e5be);
+    color: white;
+  }
+
+  header img {
+    max-width: 180px;
+    margin-bottom: 1rem;
+  }
+
+  .nav-bar {
+    background: #0b2c50;
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  .nav-bar a {
+    color: white;
+    margin: 0 1rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+
+  h2 {
+    color: var(--highlight);
+    margin-top: 2rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 0.6rem;
+    border-bottom: 1px solid #444;
+  }
+
+  th {
+    color: var(--highlight);
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  body.light {
+    --background: #f9f9f9;
+    --foreground: #111;
+    --card: #ffffff;
+    --highlight: #003973;
+  }
+
+</style>
+
 </head>
 <body>
   <header>
@@ -93,24 +117,32 @@
     <blockquote style="font-style: italic; margin-top: 1rem;">"Your machine, data, and custom UI — to your specifications. With full certainty of compliance, traceability, accuracy, and compatibility."</blockquote>
   </header>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Projects</a>
-    <a href="#examples">Live Demos</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="nav-bar">
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#live-demos">Live Demos</a>
+  <a href="#contact">Contact</a>
+  <button onclick="document.body.classList.toggle('light')"
+        style="position:absolute;top:10px;right:10px;"
+        class="btn">
+    Toggle Light/Dark
+  </button>
+  </div>
 
-  <div class="container">
-    <section id="services">
-      <h2>🔧 Modular Engineering Services</h2>
-      <!-- Table retained as-is -->
-    </section>
-
-    <section id="portfolio">
-      <h2>🚀 Project Portfolio</h2>
-      <!-- Sections retained as-is -->
-    </section>
-
+  <div class="card">
+    <div class="container">
+      <section id="services">
+       <h2>🔧 Modular Engineering Services</h2>
+       <!-- Table retained as-is -->
+      </section>
+  </div>
+  <div class="card">
+      <section id="portfolio">
+        <h2>🚀 Project Portfolio</h2>
+        <!-- Sections retained as-is -->
+      </section>
+  </div>
+  <div class="card"> 
     <section id="examples">
       <h2>🧪 Live Examples</h2>
       <p>Explore interactive previews of our modular components:</p>
@@ -126,15 +158,17 @@
       </ul>
       <p>Each example is fully customizable — visual branding, logic layers, and hardware integration are adapted per client specs.</p>
     </section>
-
+  </div>
+  <div class="card">
     <section id="contact" class="contact">
       <h2>📬 Get in Touch</h2>
       <p>Looking to streamline your lab tools, automate testing, or upgrade your legacy systems?</p>
       <p>Email: <a href="mailto:aydenreese1430@gmail.com">aydenreese1430@gmail.com</a></p>
       <p><a class="btn" href="https://linkedin.com/in/ayden-reese-ece" target="_blank">Visit LinkedIn Profile</a></p>
+  </div> 
     </section>
-
     <section>
+  <dic class="card">
       <h2>🧠 Why Aydex?</h2>
       <div class="section-block">
         <p>Aydex Systems builds high-performance custom interfaces for:</p>
@@ -144,6 +178,7 @@
           <li>Field data collection</li>
           <li>Startup hardware demos</li>
         </ul>
+
         <blockquote>“Built to uncover and solve the problems others overlook.”</blockquote>
         <p>Whether you're replacing paper, Excel, or clunky legacy UIs — we’ll help you go faster, cleaner, and smarter.</p>
       </div>
