@@ -6,183 +6,217 @@
   <title>Aydex Systems – Custom Engineering Interfaces</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-  :root {
-    --primary: #003973;
-    --background: #1e1e1e;
-    --foreground: #f0f0f0;
-    --card: #2a2a2a;
-    --accent: #4e7cff;
-    --highlight: #bdcfff;
-  }
+    :root {
+      --primary: #003973;
+      --background: #1e1e1e;
+      --foreground: #f0f0f0;
+      --card: #2a2a2a;
+      --accent: #4e7cff;
+      --highlight: #bdcfff;
+    }
 
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--background);
-    color: var(--foreground);
-  }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+    }
 
-  header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: linear-gradient(to right, #003973, #e5e5be);
-    color: white;
-  }
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: linear-gradient(to right, #003973, #e5e5be);
+      color: white;
+    }
 
-  header img {
-    max-width: 180px;
-    margin-bottom: 1rem;
-  }
+    header img {
+      max-width: 160px;
+      margin-bottom: 1rem;
+    }
 
-  .nav-bar {
-    background: #0b2c50;
-    text-align: center;
-    padding: 0.8rem;
-  }
+    .nav-bar {
+      background: #0b2c50;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  .nav-bar a {
-    color: white;
-    margin: 0 1rem;
-    font-weight: 600;
-    text-decoration: none;
-  }
+    .nav-bar a {
+      color: white;
+      margin: 0 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+    }
 
-  .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem 1.5rem;
-  }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
 
-  .card {
-    background: var(--card);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem auto;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      max-width: 960px;
+    }
 
-  h2 {
-    color: var(--highlight);
-    margin-top: 2rem;
-    border-bottom: 1px solid #444;
-    padding-bottom: 0.5rem;
-  }
+    h2 {
+      color: var(--highlight);
+      margin-top: 0;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
 
-  th, td {
-    text-align: left;
-    padding: 0.6rem;
-    border-bottom: 1px solid #444;
-  }
+    th, td {
+      text-align: left;
+      padding: 0.6rem;
+      border-bottom: 1px solid #444;
+    }
 
-  th {
-    color: var(--highlight);
-  }
+    th {
+      color: var(--highlight);
+    }
 
-  .btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 0.6rem 1rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-  }
+    ul {
+      line-height: 1.7;
+      padding-left: 1.2rem;
+    }
 
-  a {
-    color: var(--accent);
-  }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-  body.light {
-    --background: #f9f9f9;
-    --foreground: #111;
-    --card: #ffffff;
-    --highlight: #003973;
-  }
+    a {
+      color: var(--accent);
+    }
 
-</style>
+    blockquote {
+      margin-top: 1rem;
+      font-style: italic;
+      opacity: 0.8;
+    }
 
+    body.light {
+      --background: #f9f9f9;
+      --foreground: #111;
+      --card: #ffffff;
+      --highlight: #003973;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <img src="static/images/aydex_logo_blue_gradient_clean.png" alt="Aydex Logo">
     <h1>Aydex Systems</h1>
     <p>Custom Interfaces, Embedded Systems, and Engineering Dashboards</p>
-    <blockquote style="font-style: italic; margin-top: 1rem;">"Your machine, data, and custom UI — to your specifications. With full certainty of compliance, traceability, accuracy, and compatibility."</blockquote>
+    <blockquote>"Your machine, data, and custom UI — to your specifications. With full certainty of compliance, traceability, accuracy, and compatibility."</blockquote>
   </header>
 
   <div class="nav-bar">
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#live-demos">Live Demos</a>
-  <a href="#contact">Contact</a>
-  <button onclick="document.body.classList.toggle('light')"
-        style="position:absolute;top:10px;right:10px;"
-        class="btn">
-    Toggle Light/Dark
-  </button>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#examples">Live Demos</a>
+    <a href="#contact">Contact</a>
+    <button onclick="document.body.classList.toggle('light')" class="btn toggle-btn">Toggle Light/Dark</button>
+  </div>
+
+  <div class="card" id="services">
+    <h2>🔧 Modular Engineering Services</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Service</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Data & Testing</td><td><strong>Custom Data Loggers</strong></td><td>Collect, store, and export sensor data from lab or field equipment (CSV, PDF, cloud).</td></tr>
+    <tr><td></td><td><strong>Forensic Test Automation</strong></td><td>Replace manual testing with compliant, automated force/displacement analysis systems.</td></tr>
+    <tr><td>Device Interfaces</td><td><strong>Embedded UI Development</strong></td><td>STM32 or Raspberry Pi UIs for control, feedback, and monitoring.</td></tr>
+    <tr><td></td><td><strong>Touchscreen UX Systems</strong></td><td>Graphical interfaces for test machines, labs, or portable rigs.</td></tr>
+    <tr><td>Remote & Web Control</td><td><strong>Web-Controlled Hardware</strong></td><td>Control actuators, sensors, motors, or lights from browser or mobile.</td></tr>
+    <tr><td></td><td><strong>Mobile-Friendly Engineering Apps</strong></td><td>Use phones or tablets in the field with intuitive engineering interfaces.</td></tr>
+    <tr><td>Compliance & Reporting</td><td><strong>ASTM/ISO Report Generators</strong></td><td>Auto-generate compliant PDFs from test data for clients or inspectors.</td></tr>
+    <tr><td></td><td><strong>Audit-Ready Traceability</strong></td><td>Versioned test logs with operator info, timestamps, and approval tracking.</td></tr>
+    <tr><td>Prototyping</td><td><strong>Product MVPs for Startups</strong></td><td>Turn your prototype idea into a working Pi/STM32/web hybrid demo fast.</td></tr>
+    <tr><td></td><td><strong>Custom Circuit + Software Builds</strong></td><td>Full-cycle development of smart devices with logging, control, and reporting.</td></tr>
+    <tr><td>Infrastructure & Support</td><td><strong>Device + Server Integration</strong></td><td>Sync test results to Google Drive, Dropbox, or your own internal system.</td></tr>
+    <tr><td></td><td><strong>System Recovery & Modernization</strong></td><td>Upgrade broken or aging machines with new control boards and logging systems.</td></tr>
+  </tbody>
+</table>
+  </div>
+
+  <div class="card" id="projects">
+    <h2>🚀 Project Portfolio</h2>
+<div class="card"><strong>QuadPod:</strong> Mobile web tester for roofing adhesive. Web UI + Pi + actuator + logger.<br><em>📸 Screenshot Placeholder – UI or hardware photo</em></div>
+<div class="card"><strong>Tensile Tester Redesign:</strong> Touchscreen forensic logger with CSV/PDF output.<br><em>📸 Screenshot Placeholder – Touchscreen, enclosure, or graph output</em></div>
+<div class="card"><strong>Crowd Density Detection System:</strong> STM32-based sensor + LED indicator logic.<br><em>📸 Screenshot Placeholder – sensor + visual indicator</em></div>
+<div class="card"><strong>CoreFlux (Concept):</strong> Dev-optimized OS environment for rapid automation testing.<br><em>📸 Screenshot Placeholder – terminal mockup or system diagram</em></div>
+<div class="card"><strong>Environmental Logger:</strong> Flask + DHT22 logger with mobile UI.<br><em>📸 Screenshot Placeholder – simple Flask UI demo</em></div>
+  </div>
+
+  <div class="card" id="examples">
+    <h2>🧪 Live Examples</h2>
+    <p>Explore interactive previews of our modular components:</p>
+    <ul>
+      <li><a href="examples/logger.html">Data Logger UI</a> – Simulated test logger with fake sensor data</li>
+      <li><a href="examples/graph.html">Graph Dashboard</a> – Dynamic line chart for load or temp data</li>
+      <li><a href="examples/job_form.html">New Job / Open Job</a> – Job management mock interface</li>
+      <li><a href="examples/init_check.html">Hardware Init Checklist</a> – GPIO and device check UX</li>
+      <li><a href="examples/operator_login.html">Operator Sign-In</a> – User authentication flow</li>
+      <li><a href="examples/sync.html">Server Sync Panel</a> – Status, force sync button, error handler</li>
+      <li><a href="examples/theme.html">Theme Toggle</a> – Switch light/dark branding modes</li>
+      <li><a href="examples/offline.html">Offline Mode Warning</a> – Cached mode visual</li>
+    </ul>
+    <p>Each example is fully customizable — visual branding, logic layers, and hardware integration are adapted per client specs.</p>
+  </div>
+
+  <div class="card" id="contact">
+    <h2>📬 Get in Touch</h2>
+    <p>Looking to streamline your lab tools, automate testing, or upgrade your legacy systems?</p>
+    <p>Email: <a href="mailto:aydenreese1430@gmail.com">aydenreese1430@gmail.com</a></p>
+    <p><a class="btn" href="https://linkedin.com/in/ayden-reese-ece" target="_blank">Visit LinkedIn Profile</a></p>
   </div>
 
   <div class="card">
-    <div class="container">
-      <section id="services">
-       <h2>🔧 Modular Engineering Services</h2>
-       <!-- Table retained as-is -->
-      </section>
+    <h2>🧠 Why Aydex?</h2>
+    <p>Aydex Systems builds high-performance custom interfaces for:</p>
+    <ul>
+      <li>Engineering labs</li>
+      <li>Test equipment</li>
+      <li>Field data collection</li>
+      <li>Startup hardware demos</li>
+    </ul>
+    <blockquote>“Built to uncover and solve the problems others overlook.”</blockquote>
+    <p>Whether you're replacing paper, Excel, or clunky legacy UIs — we’ll help you go faster, cleaner, and smarter.</p>
   </div>
-  <div class="card">
-      <section id="portfolio">
-        <h2>🚀 Project Portfolio</h2>
-        <!-- Sections retained as-is -->
-      </section>
-  </div>
-  <div class="card"> 
-    <section id="examples">
-      <h2>🧪 Live Examples</h2>
-      <p>Explore interactive previews of our modular components:</p>
-      <ul>
-        <li><a href="examples/logger.html">Data Logger UI</a> – Simulated test logger with fake sensor data</li>
-        <li><a href="examples/graph.html">Graph Dashboard</a> – Dynamic line chart for load or temp data</li>
-        <li><a href="examples/job_form.html">New Job / Open Job</a> – Job management mock interface</li>
-        <li><a href="examples/init_check.html">Hardware Init Checklist</a> – GPIO and device check UX</li>
-        <li><a href="examples/operator_login.html">Operator Sign-In</a> – User authentication flow</li>
-        <li><a href="examples/sync.html">Server Sync Panel</a> – Status, force sync button, error handler</li>
-        <li><a href="examples/theme.html">Theme Toggle</a> – Switch light/dark branding modes</li>
-        <li><a href="examples/offline.html">Offline Mode Warning</a> – Cached mode visual</li>
-      </ul>
-      <p>Each example is fully customizable — visual branding, logic layers, and hardware integration are adapted per client specs.</p>
-    </section>
-  </div>
-  <div class="card">
-    <section id="contact" class="contact">
-      <h2>📬 Get in Touch</h2>
-      <p>Looking to streamline your lab tools, automate testing, or upgrade your legacy systems?</p>
-      <p>Email: <a href="mailto:aydenreese1430@gmail.com">aydenreese1430@gmail.com</a></p>
-      <p><a class="btn" href="https://linkedin.com/in/ayden-reese-ece" target="_blank">Visit LinkedIn Profile</a></p>
-  </div> 
-    </section>
-    <section>
-  <dic class="card">
-      <h2>🧠 Why Aydex?</h2>
-      <div class="section-block">
-        <p>Aydex Systems builds high-performance custom interfaces for:</p>
-        <ul>
-          <li>Engineering labs</li>
-          <li>Test equipment</li>
-          <li>Field data collection</li>
-          <li>Startup hardware demos</li>
-        </ul>
 
-        <blockquote>“Built to uncover and solve the problems others overlook.”</blockquote>
-        <p>Whether you're replacing paper, Excel, or clunky legacy UIs — we’ll help you go faster, cleaner, and smarter.</p>
-      </div>
-    </section>
-  </div>
 </body>
 </html>
