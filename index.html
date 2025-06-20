@@ -128,6 +128,63 @@
       right: 20px;
     }
   </style>
+  <style>
+  .slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .slider-container {
+    display: flex;
+    transition: transform 0.4s ease;
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .slide h3 {
+    color: var(--highlight);
+  }
+
+  .slide iframe {
+    width: 100%;
+    height: 320px;
+    border-radius: 8px;
+    background: white;
+    margin: 1rem 0;
+  }
+
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+  }
+
+  .slider-btn.prev {
+    left: 10px;
+  }
+
+  .slider-btn.next {
+    right: 10px;
+  }
+</style>
+
 </head>
 <body>
 
@@ -182,21 +239,55 @@
 <div class="card"><strong>Environmental Logger:</strong> Flask + DHT22 logger with mobile UI.<br><em>📸 Screenshot Placeholder – simple Flask UI demo</em></div>
   </div>
 
-  <div class="card" id="examples">
-    <h2>🧪 Live Examples</h2>
-    <p>Explore interactive previews of our modular components:</p>
-    <ul>
-      <li><a href="examples/logger.html">Data Logger UI</a> – Simulated test logger with fake sensor data</li>
-      <li><a href="examples/graph.html">Graph Dashboard</a> – Dynamic line chart for load or temp data</li>
-      <li><a href="examples/job_form.html">New Job / Open Job</a> – Job management mock interface</li>
-      <li><a href="examples/init_check.html">Hardware Init Checklist</a> – GPIO and device check UX</li>
-      <li><a href="examples/operator_login.html">Operator Sign-In</a> – User authentication flow</li>
-      <li><a href="examples/sync.html">Server Sync Panel</a> – Status, force sync button, error handler</li>
-      <li><a href="examples/theme.html">Theme Toggle</a> – Switch light/dark branding modes</li>
-      <li><a href="examples/offline.html">Offline Mode Warning</a> – Cached mode visual</li>
-    </ul>
-    <p>Each example is fully customizable — visual branding, logic layers, and hardware integration are adapted per client specs.</p>
+  <h2>🧪 Live Examples</h2>
+<div class="slider-wrapper">
+  <button class="slider-btn prev" onclick="slideDemos(-1)">&#10094;</button>
+  <div class="slider-container" id="demoSlider">
+    <div class="slide">
+      <h3>🔧 Data Logger UI</h3>
+      <iframe src="examples/logger.html" frameborder="0"></iframe>
+      <p>Real-time logger simulation with mock sensor input and CSV export. <strong>Fully themeable and hardware-adaptable per client spec.</strong></p>
+    </div>
+    <div class="slide">
+      <h3>📈 Graph Dashboard</h3>
+      <iframe src="examples/graph.html" frameborder="0"></iframe>
+      <p>Live data charting with line/step visualizations for force or displacement. <strong>Branded and tuned to your signal format.</strong></p>
+    </div>
+    <div class="slide">
+      <h3>📋 Job Management UI</h3>
+      <iframe src="examples/job_form.html" frameborder="0"></iframe>
+      <p>Start or resume tests with form-backed job data. Fully integratable with your backend or cloud storage.</p>
+    </div>
+    <div class="slide">
+      <h3>🧪 Hardware Init Checklist</h3>
+      <iframe src="examples/init_check.html" frameborder="0"></iframe>
+      <p>GPIO + device boot status with visual diagnostics. Tailored to your I/O layout and devices.</p>
+    </div>
+    <div class="slide">
+      <h3>👤 Operator Sign-In</h3>
+      <iframe src="examples/operator_login.html" frameborder="0"></iframe>
+      <p>Role-based access flow and logging system. Can connect to Active Directory, CSV fallback, or local memory.</p>
+    </div>
+    <div class="slide">
+      <h3>🌐 Server Sync Panel</h3>
+      <iframe src="examples/sync.html" frameborder="0"></iframe>
+      <p>Cloud/manual sync interface for results, configs, or backups. Fully customizable per protocol or storage type.</p>
+    </div>
+    <div class="slide">
+      <h3>🎨 Theme Toggle</h3>
+      <iframe src="examples/theme.html" frameborder="0"></iframe>
+      <p>Brand-matched dark/light toggle system. Fully applied across all UI elements and styles.</p>
+    </div>
+    <div class="slide">
+      <h3>📴 Offline Mode Visual</h3>
+      <iframe src="examples/offline.html" frameborder="0"></iframe>
+      <p>Shows offline mode state with graceful fallback. Configurable for PWA caching, alerts, or sync queuing.</p>
+    </div>
   </div>
+  <button class="slider-btn next" onclick="slideDemos(1)">&#10095;</button>
+</div>
+
+
 
   <div class="card" id="contact">
     <h2>📬 Get in Touch</h2>
@@ -218,5 +309,17 @@
     <p>Whether you're replacing paper, Excel, or clunky legacy UIs — we’ll help you go faster, cleaner, and smarter.</p>
   </div>
 
+  
+<script>
+  let currentSlide = 0;
+  function slideDemos(direction) {
+    const container = document.getElementById("demoSlider");
+    const slides = container.children.length;
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = slides - 1;
+    if (currentSlide >= slides) currentSlide = 0;
+    container.style.transform = "translateX(-" + (100 * currentSlide) + "%)";
+  }
+</script>
 </body>
 </html>
